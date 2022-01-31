@@ -1,53 +1,56 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+    <meta charset="utf-8">
+    <title> Upload Files with Drag 'n' Drop and Image in Laravel 8 using dropzone</title>
 
-        <title>Laravel</title>
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
+    </script>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
+    </script>
 
-        <body>
-            <style>
-                .title{
-                    background-color: aqua;
-                    width: auto;
-                    height: 50px;
-                    text-align: center;
-                }
-                .sidebar{
-                    background-color: black;
-                    width: auto;
-                    height: 50px;
-                    color: white;
-                    text-align: center;
-                    padding-top: 10px;
-                   
-                }
-                .content{
-                    background-color: pink;
-                    width: auto;
-                    height: 500px;
-                    color: black;
-                    text-align: center;
-                    padding-top: 10px;
-                }
-            </style>
-           <div class="title"> <h1>laravel_8_file_upload</h1></div>
-           <div class="sidebar">
-               <ul>
-                <button>Home</button>
-                <a href="{{route('files.upload')}}">
-                <button >File</button></a>
-                </ul>
-                
-           </div>
-           <div class="content">
-           <h1>Upload your file</h1>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #9C27B0;
+            color: white;
+            text-align: center;
+        }
+
+        body {
+            background-color: #EDF7EF
+        }
+
+    </style>
+
+</head>
+<body>
+ <div class="row mb-3">
+        <div class="col-lg-12 margin-tb">
+            <div class="text-center">
+                <h2>Laravel 8 File Upload </h2>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div >
            @yield('content')
            </div>
-       
-    </body>
+    <div class="text-center footer">
+
+        <h3>Etu Mahmuda Era</h3>
+        <h4>Web Developer</h4>
+        <h4>etumahmuda@gmail.com</h4>
+        
+
+    </div>
+</body>
 </html>

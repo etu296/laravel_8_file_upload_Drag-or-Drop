@@ -1,6 +1,6 @@
 @extends('welcome')
 @section('content')
-<h1>created</h1>
+<h1>Created</h1>
 <!DOCTYPE html>
 <html>
   <head>
@@ -42,33 +42,29 @@
     </style>
   </head>
   <body>
-    <div class="row mb-3">
-        <div class="col-lg-12 margin-tb">
-            <div class="text-center">
-                <h2>Laravel 8 File Upload </h2> 
-            </div>
-        </div>
-    </div>
+    
 
     <div class="container">
     <div class="row">
 
     </div>        
-    <form method="post" action="" enctype="multipart/form-data"
+    <form method="post" action="{{ route('file.store') }}" enctype="multipart/form-data"
           class="dropzone" id="dropzone">
-        
+        @csrf
         </form>
     </div>
-       <div class="row mt-3">
+      
+
+    <div class="row mt-3">
         <div class="col-lg-12 margin-tb">
             <div class="text-center">
-                <a class="btn btn-success" href="" title="return to index"> <i class="fas fa-backward fa-2x"></i>
+                <a class="btn btn-success" href="{{ route('files.upload') }}" title="return to index"> <i class="fas fa-backward fa-2x"></i>
                 </a>
             </div>
         </div>
-    </div>
+    </div> 
 
-       
+  
 
     <script type="text/javascript">
         Dropzone.options.dropzone =
@@ -86,7 +82,7 @@
                                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                             },
                     type: 'POST',
-                    url: '{{ url("files/destroy") }}',
+                    url: '',
                     data: {filename: name},
                     success: function (data){
                         console.log("File has been successfully removed!!");
