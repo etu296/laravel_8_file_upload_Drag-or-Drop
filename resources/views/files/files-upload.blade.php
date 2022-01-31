@@ -1,6 +1,8 @@
 @extends('welcome')
 @section('content')
-
+@if(session()->has('msg'))
+<p class="alert alert-success">{{session()->get('msg')}}</p>
+@endif
     @if ($message = Session::get('success'))
     <div class="alert alert-success">
         <p>{{ $message }}</p>
@@ -32,8 +34,8 @@
                     <td>{{$file->filename}}</td>
                     <td>{{date_format($file->created_at, 'jS M Y') }}</td>
                     <td>
-                        <form>
-
+                        <form action="{{route('file.delete',$file->id)}}" method="get">
+                          @csrf
                             <button type="submit" title="delete" style="border: none; background-color:transparent;">
                                 <i class="fas fa-trash fa-lg text-danger"></i>
 

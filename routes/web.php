@@ -20,6 +20,6 @@ Route::get('/', function () {
 Route::get('/files',[FileUploadController::class,'FileUpload'])->name('files.upload');
 Route::get('/files/create',[FileUploadController::class,'FileCreate'])->name('files.Create');
 Route::post('/file/store',[FileUploadController::class,'FileStore'])->name('file.store');
-Route::post('/file/delete/{id}',[FileUploadController::class,'FileDelete'])->name('file.delete');
+Route::get('/file/delete/{id}',[FileUploadController::class,'FileDelete'])->name('file.delete');
 
 

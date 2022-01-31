@@ -18,9 +18,9 @@ class FileUploadController extends Controller
     }
     public function FileStore(Request $request)
     {
-        $image = $request->file('file');
-        $FileName = $image->getClientOriginalName();
-        $image->move(public_path('images'), $FileName);
+        $file = $request->file('file');
+        $FileName = $file->getClientOriginalName();
+        $file->move(public_path('images'), $FileName);
 
         $imageUpload = new FileUpload();
         $imageUpload->filename = $FileName;
@@ -29,10 +29,8 @@ class FileUploadController extends Controller
     }
     public function FileDelete($id)
     {
-$files=FileUpload::find($id);
-if($files)
-{
-    
-}
+     FileUpload::find($id)->delete();
+     //dd($id);
+     return redirect()->back()->with('msg','Deleted Successfully....!!');
     }
 }

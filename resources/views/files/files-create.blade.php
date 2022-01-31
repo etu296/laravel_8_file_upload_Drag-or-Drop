@@ -51,7 +51,9 @@
     <form method="post" action="{{ route('file.store') }}" enctype="multipart/form-data"
           class="dropzone" id="dropzone">
         @csrf
+        <button method="post" action="{{ route('file.store') }}" enctype="multipart/form-data">select file</button>
         </form>
+        
     </div>
       
 
@@ -81,8 +83,9 @@
                     headers: {
                                 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                             },
-                    type: 'POST',
-                    url: '',
+                          
+                            type: 'POST',
+                    url: '{{ url("file/delete") }}',
                     data: {filename: name},
                     success: function (data){
                         console.log("File has been successfully removed!!");
